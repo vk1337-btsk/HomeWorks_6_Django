@@ -1,0 +1,8 @@
+# PyCharm and Python
+.venv
+.idea
+*/__pycache__/
+__pycache__/
+
+# Poetry
+poetry.lock
