@@ -43,3 +43,19 @@ if __name__ == "__main__":
     # Корректная остановка веб-сервера, чтобы он освободил адрес и порт в сети, которые занимал
     webServer.server_close()
     print("Server stopped.")
+
+
+from django.shortcuts import render
+
+
+def home(request):
+    return render(request, 'catalog/home.html')
+
+
+def contancts(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+        print(f'Имя: {name} | Телефон: {phone} | Сообщение: {message}')
+    return render(request, 'catalog/contacts.html')
