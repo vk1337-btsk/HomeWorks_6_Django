@@ -22,7 +22,6 @@ class Product(models.Model):
     img_product = models.ImageField(upload_to='img_product/', null=True, blank=True, db_column="Картинка (превью)")
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     price = models.FloatField(db_column='   Цена')
-    manufactured_at = models.DateTimeField(default=datetime.datetime(1900, 12, 1, 0, 0, 0), verbose_name='Дата производства продукта')
     created_at = models.DateTimeField(auto_now_add=True, db_column='Дата создания')
     updated_at = models.DateTimeField(auto_now=True, db_column='Дата последнего изменения')
 
